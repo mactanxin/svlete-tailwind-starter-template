@@ -1,4 +1,5 @@
 # What is this?   
+## SvelteKit + TypeScript + TailwindCSS 2.x
 This is a starter template made with SvelteKit@next (next is temporary), also SvelteKit now is using Vite, Yay!
 
 Just one ~~click~~ command add TailwindCSS using [Svlete-Adder](https://github.com/svelte-add/svelte-adders)
