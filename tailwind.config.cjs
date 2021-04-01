@@ -19,7 +19,9 @@ module.exports = {
 		extend: {}
 	},
 	variants: {
-		extend: {}
+		extend: {
+			backgroundColor: ['dark']
+		}
 	},
 	plugins: [],
 	darkMode: 'class'
