@@ -12,14 +12,14 @@
 <slot />
 <Footer></Footer>
 
-<style>
+<style global lang="postcss">
 	:global(body) {
 		background-color: #f5f6f6;
 		color: #0084f6;
 		transition: background-color 0.3s
 	}
-	:global(body.dark-mode) {
-		background-color: #1d3040;
-		color: #bfc2c7;
+	:global(body.dark) {
+		@apply dark:bg-gray-900 bg-opacity-0;
+		 /* background-color: #101727; */
 	}
 </style>
