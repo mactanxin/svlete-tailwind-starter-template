@@ -1,4 +1,6 @@
 <script>
+	import ThemeSwitcher from './ThemeSwitcher.svelte';
+	import Header from './Header.svelte';
   export let segment;
   import { theme } from '../routes/store';
 
@@ -6,7 +8,6 @@
     // const menu = document.getElementById('mobile-menu');
     // menu.classList.toggle('hidden')
     $theme = $theme === 'dark' ? 'light' : 'dark';
-    document.querySelector('html').classList.toggle('dark')
   }
 
   const toggleDropdown = () => {
@@ -15,10 +16,9 @@
   }
 
   const toggleTheme = () => {
-    // window.document.body.classList.toggle('dark-mode')
-    // console.log('toggle')
     $theme = $theme === 'dark' ? 'light' : 'dark';
     document.querySelector('html').classList.toggle('dark')
+    document.body.classList.toggle('dark')
   }
 
   let defaultMenuStyle = `text-gray-300 hover:bg-gray-700 hover:text-white`;
@@ -70,11 +70,12 @@
 
             <a href="projects" on:click={() => segment = 'projects'} class="{segment === 'projects' ? selectedMenuStyle : defaultMenuStyle} px-3 py-2 rounded-md text-sm font-medium"  aria-current="{segment === 'projects' ? 'page' : undefined}">Projects</a>
 
-            <a href="other" on:click={() => segment = 'other'} class="{segment === 'other' ? selectedMenuStyle : defaultMenuStyle} px-3 py-2 rounded-md text-sm font-medium" aria-current="{segment === 'other' ? 'page' : undefined}">Calendar</a>
+            <a href="contact" on:click={() => segment = 'contact'} class="{segment === 'contact' ? selectedMenuStyle : defaultMenuStyle} px-3 py-2 rounded-md text-sm font-medium" aria-current="{segment === 'contact' ? 'page' : undefined}">Contact</a>
           </div>
         </div>
       </div>
       <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+        <div class="mt-2"><ThemeSwitcher /></div>
         <button on:click={toggleTheme} class="mr-2 bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
           <span class="sr-only">Toggle theme</span>
           <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -128,7 +129,7 @@
 
       <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</a>
 
-      <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Calendar</a>
+      <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
     </div>
   </div>
 </nav>
